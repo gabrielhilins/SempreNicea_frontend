@@ -1,0 +1,140 @@
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.dropdownButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 0.375rem;
+  background-color: var(--color-light);
+  color: white;
+  padding: 0rem 1rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.flagImage {
+  margin-right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  border: none !important; /* Explicitly remove any borders */
+  outline: none !important; /* Remove any outline */
+  box-sizing: border-box; /* Prevent padding/margin issues */
+}
+
+.arrowIcon {
+  width: 1.25rem; /* 5 */
+  margin-left: 0.75rem; /* 3 */
+  transition: transform 0.2s ease;
+  color: var(--color-black);
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  z-index: 10;
+  margin-top: 0.25rem; /* 1 */
+  width: 100%;
+  background-color: var(--color-white);
+  border-radius: 0.375rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  padding: 0.5rem 0.9rem;
+  margin: 0px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #4B5563; /* Gray 700 */
+  position: relative;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  border: none !important; /* Ensure no border on the button */
+  box-sizing: border-box; /* Prevent padding/margin issues */
+
+  .languageText {
+    margin-left: 0.1rem;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  &:hover {
+    background: rgba(88, 87, 87, 0.705);
+    color: white;
+    transition: 0.5s;
+
+    .languageText {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .flagImage {
+      transform: translateX(-10px);
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .flagImage {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.2rem;
+    border: none !important; /* Reinforce no border */
+    outline: none !important; /* Reinforce no outline */
+    box-sizing: border-box; /* Prevent padding/margin issues */
+  }
+
+  &:not(:last-child) {
+    padding-right: 1.5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin: 0px 3px;
+    width: 92%;
+
+    .flagImage {
+      margin-right: 0px;
+    }
+  }
+}
+
+.loginCadastroButton {
+  background-color: white;
+  color: #1D361F;
+  border: 2px solid white;
+  border-radius: 0.375rem;
+  box-shadow: 5px 5px 20px white;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: none;
+    transition: 0.5s;
+  }
+}
+
+.loginCadastroMenu {
+  background-color: white;
+  border: 2px solid #1D361F;
+}

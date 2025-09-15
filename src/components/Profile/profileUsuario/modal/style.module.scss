@@ -1,0 +1,292 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .content {
+    width: 90%;
+    max-width: 600px;
+    max-height: 100vh; /* Limita a altura do conteúdo para habilitar scroll */
+    background-color: white;
+    border-radius: 8px;
+    overflow-y: auto; /* Habilita o scroll apenas no modal */
+    padding: 20px;
+    position: relative;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .backIcon {
+    background: none; /* Remove o fundo */
+    border: none;      /* Remove a borda */
+    padding: 0;        /* Remove o espaçamento interno */
+    cursor: pointer;   /* Exibe o cursor de clique */
+    color: #333;      /* Define a cor do ícone, ajuste conforme o tema */
+    font-size: 24px;   /* Tamanho do ícone */
+  }
+  
+  .backIcon button:focus {
+    outline: none;    /* Remove o contorno do botão ao focar */
+  }
+  
+  .editPhotos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha à esquerda */
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .photos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px 0px;
+  }
+  
+  .photoUpload {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .uploadButton {
+    background-color: #3B6D42;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+  }
+  
+  .uploadButton:hover {
+    background-color: #2a4e2f;
+  }
+  
+  .hiddenInput {
+    display: none;
+  }
+  
+  .cropPreviewWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px; /* Adicionado para espaçamento abaixo das fotos */
+  }
+  
+  .profileImageWrapper,
+  .backgroundImageWrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input{
+      display: none;
+    }
+  }
+  
+  .preview {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Garante que a imagem de perfil continue circular */
+  }
+  
+  .backgroundImageWrapper {
+    border-radius: 12px; /* Mantém o border-radius para a imagem de fundo */
+    width: 150px;
+    height: 100px;
+  }
+  
+  .previewBackground {
+    object-fit: cover;
+    width: 100%; /* Ajusta para cobrir o wrapper */
+    height: 100%; /* Ajusta para cobrir o wrapper */
+    border-radius: 12px;
+  }
+  
+  .hoverOverlay  {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 12px;
+    padding: 4px;
+    display: none;
+    border-radius: inherit; 
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    button{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 12px;
+      padding: 4px;
+      display: none;
+      border-radius: inherit; 
+    }
+  }
+
+  .hoverOverlay:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  
+  .profileImageWrapper:hover .hoverOverlay,
+  .backgroundImageWrapper:hover .hoverOverlay {
+    display: block; 
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+
+  }
+  
+  .forms {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .formLabel {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .inputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .editIcon {
+    position: absolute;
+    right: 10px;
+    color: #3B6D42;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    z-index: 1;
+  }
+  
+  .iconInput {
+    position: absolute;
+    left: 10px;
+    color: #3B6D42;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    z-index: 1;
+  }
+  
+  .editIcon:hover {
+    color: #2a4e2f;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 8px 35px 8px 35px; /* Espaço para o ícone */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .editableInput {
+    border: 2px solid #3B6D42;
+  }
+  
+  .formInput:focus {
+    border-color: #3B6D42;
+  }
+  
+  .actionButtons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .saveButton {
+    background-color: #3B6D42;
+    color: #fff;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    align-items: center;
+    gap: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .saveButton:hover {
+    background-color: #2a4e2f;
+  }
+  
+  .revertButton {
+    background-color: #fff;
+    color: #3B6D42;
+    border: 2px solid #3B6D42;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .revertButton:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .buttonIcon {
+    font-size: 20px;
+  }

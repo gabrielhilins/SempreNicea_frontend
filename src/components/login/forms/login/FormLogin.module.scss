@@ -1,0 +1,226 @@
+$primary-color: #013A33;
+$gray-300: #d1d5db;
+$red-500: #ef4444;
+$green-600: #16a34a;
+$white: #ffffff;
+$text-color: #374151;
+$text-link: #5BAA66;
+
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+  padding: clamp(0.5rem, 4vw, 1rem);
+  margin: 0 auto;
+}
+
+.formTitle {
+  color: var(--green-light);
+  font-size: clamp(1.5rem, 5vw, 1.75rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.formDescription {
+  color: $text-color;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  text-align: center;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid $gray-300;
+  padding: 0.5rem 0;
+  transition: border-color 0.3s ease;
+
+  &:focus-within {
+    border-color: $primary-color;
+  }
+
+  .inputIcon {
+    color: var(--green-light);
+    margin-right: 1rem; // Increased spacing to match ForgotPassword/ResetPassword
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .toggleIcon {
+    color: var(--green-light);
+    cursor: pointer;
+    margin-left: 1rem; // Increased spacing
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $green-600;
+    }
+  }
+
+  .input {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    color: $text-color;
+    padding: 0.5rem 0;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus + label,
+    &.filled + label {
+      top: -1.25rem;
+      font-size: clamp(0.625rem, 2vw, 0.75rem);
+      color: $primary-color;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0.75rem;
+    left: 2.5rem; // Adjusted to match spacing
+    color: #9ca3af;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+}
+
+.errorMessage {
+  color: $red-500;
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  margin-top: 0.25rem;
+}
+
+.successMessage {
+  color: $green-600;
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  margin-top: 0.25rem;
+}
+
+.optionsSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .checkboxGroup {
+    display: flex;
+    align-items: center;
+
+    .checkboxInput {
+      margin-right: 0.5rem;
+      accent-color: $primary-color;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .checkboxLabel {
+      color: var(--color-black);
+      font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    }
+  }
+
+  .forgotLink {
+    color: $text-link;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-light);
+  color: $white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  border: none;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    animation: spin 1s linear infinite;
+    border: 2px solid transparent;
+    border-top: 2px solid $white;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .formContainer {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+
+  .inputWrapper label {
+    left: 2rem;
+  }
+
+  .inputWrapper .inputIcon {
+    margin-right: 0.75rem;
+  }
+
+  .inputWrapper .toggleIcon {
+    margin-left: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 0.5rem;
+  }
+
+  .inputWrapper label {
+    left: 1.75rem;
+  }
+
+  .inputWrapper .inputIcon {
+    margin-right: 0.5rem;
+  }
+
+  .inputWrapper .toggleIcon {
+    margin-left: 0.5rem;
+  }
+
+  .optionsSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

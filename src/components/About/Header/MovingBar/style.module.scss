@@ -1,0 +1,102 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0.8rem 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0.6rem 0;
+  }
+
+  @media screen and (max-width: 425px) {
+    padding: 0.5rem 0;
+  }
+}
+
+.marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  gap: 2rem;
+
+  @media screen and (max-width: 1024px) {
+    gap: 1.5rem;
+    animation: scroll 18s linear infinite;
+  }
+
+  @media screen and (max-width: 768px) {
+    gap: 1.2rem;
+    animation: scroll 15s linear infinite;
+  }
+
+  @media screen and (max-width: 425px) {
+    gap: 1rem;
+    animation: scroll 12s linear infinite;
+  }
+}
+
+.imageWrapper {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 5px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 3px;
+    border-radius: 3px;
+  }
+
+  @media screen and (max-width: 425px) {
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+
+    @media screen and (max-width: 1024px) {
+      height: 60px;
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 50px;
+    }
+
+    @media screen and (max-width: 425px) {
+      height: 40px;
+    }
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,483 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:50px;
+    background-color: #f5f5f5;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    width: 1400px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0, 0.2);
+    transition: transform 0.2;
+    padding: 40px;   
+}
+.contentInfo{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;  
+    position: relative;
+}
+
+
+
+.fotoDeFundo {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .imagemDeFundo {
+    width: 100%;
+    height: 100px; /* Ajuste a altura conforme necessário */
+    object-fit: cover; /* A imagem vai cobrir o espaço sem distorcer */
+    position: relative;
+    z-index: 1;
+
+    img{
+        width: 100%;
+    }
+  }
+  
+  .placeholder {
+    width: 100%;
+    height: 100px; /* Mesma altura da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* Cor de fundo para o placeholder */ /* Bordas tracejadas para indicar que é um espaço editável */
+    position: relative;
+  }
+  
+  .placeholder p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }  
+  
+  .btnAdicionarFoto {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btnAdicionarFoto:hover {
+    background-color: #0056b3; /* Efeito de hover */
+  }
+  
+
+.fotoPerfil{
+    border-radius: 50%;
+    margin-left: 150px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    img{
+        border-radius: 50%;
+    }
+}
+
+.dados{
+width: auto;
+margin-top: 20px;
+padding: 15px;
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+gap: 150px;
+}
+
+.infos{
+    margin-right: 8vh;
+    padding: 30px;
+    align-items: center;
+}
+
+.infos h1{
+    color: #1f1f1f;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.infos strong{
+    color: #1A1A1A;
+    font-weight: bold;
+    font-size: 28px;
+    font-style: normal;
+}
+
+.infos p{
+    color: #212121;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.editBtn{
+    margin-bottom: 20px;
+}
+
+.editBtn button{
+        border: 0.5px solid;
+        height: 40px;
+        width: 150px;
+        border-radius: 10px;
+    &:hover {
+        background-color: #1d361f;
+        color: #f5f5f5; // hover:text-green-400
+    }
+}
+
+.training{
+    padding: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.training img{
+    width: 50px;
+    height: 50px;
+}
+
+.training h1{
+    color: #1f1f1f;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.sobre{
+    background-color: #f5f5f5;
+    display: block;
+    margin-top: 20px;
+    gap: 20px;
+    width: 1400px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0, 0.2);
+    transition: transform 0.2;
+    padding: 40px 60px 40px;   
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.iconHeader{
+    font-size: 35px;
+    cursor: pointer;
+
+    &:hover {
+        color: #1d361f;
+    }
+    
+}
+
+.sobre h2{
+    color: #1f1f1f;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.sobre p{
+    color: #212121;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+.editableContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    width: 1200px;
+    border-radius: 15px;
+    transition: transform 0.2;
+}
+
+.editableHeader {
+    display: flex;
+    align-content: start;
+    align-items: start;
+    margin-bottom: 10px;
+
+    h2 {
+        font-size: 1.5rem;
+        color: #333;
+    }
+}
+
+.editableTextArea {
+    width: 100%;
+    min-height: 120px;
+    max-height: 300px;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: inherit;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    resize: vertical;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  
+    &:focus {
+      outline: none;
+      border-color: #0070f3;
+      box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2);
+      background-color: #fff;
+    }
+  
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+  
+
+.editableFooter {
+    gap: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+
+    .cancelButton {
+        border-radius: 12px;
+        padding: 5px 20px;
+        background-color: #f5f5f5;
+        color: #333;
+
+        &:hover {
+            background-color: rgb(221, 4, 4);
+            color: white;
+        }
+    }
+
+    .saveButton {
+        border-radius: 12px;
+        padding: 5px 30px;
+        background-color: #1d361f;
+        color: #fff;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+  /* Ajustes gerais no container */
+  .container {
+    display: flex;
+    padding: 20px; /* Reduz o padding para telas menores */
+  }
+
+  /* Ajustes no content */
+  .content{ 
+  margin-top: 10px;
+    width: 100%; /* Remove largura fixa para se adaptar à tela */
+    margin: 20px 0; /* Reduz a margem */
+    padding: 20px; /* Reduz o padding */
+  }
+
+  /* Ajustes no contentInfo */
+  .contentInfo {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    gap: 20px; /* Reduz o gap */
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  /* Ajustes na foto de fundo */
+  .fotoDeFundo {
+    max-width: 550px;
+    height: 120px;
+    z-index: 1; 
+    overflow: hidden;
+    position: relative;/* Reduz a altura da foto de fundo */
+  }
+
+  .imagemDeFundo {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    ; /* Ajusta a altura da imagem */
+  }
+
+  .placeholder {
+    height: 80px; /* Mantém consistência com a imagem */
+  }
+
+  /* Ajustes na foto de perfil */
+  .fotoPerfil {
+    margin-left: 50px; /* Remove o margin-left fixo */
+    position: absolute; /* Muda para relative para evitar sobreposições indesejadas */
+    transform: translate(-50%, -50%);
+     text-align: center; /* Centraliza a foto */
+    margin-bottom: 20px;
+    z-index: 2; /* Adiciona espaço abaixo */
+  }
+
+  .fotoPerfil img {
+    width: 100px; /* Define um tamanho fixo para a imagem */
+    height: 100px;
+  }
+
+  /* Ajustes nos dados */
+  .dados {
+    gap: 60px; /* Reduz o gap */
+    align-items: center; /* Centraliza os itens */
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  /* Ajustes nas infos */
+  .infos {
+    margin-right: 0; /* Remove margem fixa */
+    padding: 15px; /* Reduz o padding */
+    text-align: start; /* Centraliza o texto */
+  }
+
+  .infos h1 {
+    font-size: 28px; /* Reduz o tamanho da fonte */
+  }
+
+  .infos strong {
+    font-size: 20px; /* Reduz o tamanho da fonte */
+  }
+
+  .infos p {
+    font-size: 16px; /* Reduz o tamanho da fonte */
+  }
+
+  /* Ajustes no right */
+  .right {
+    flex-direction: column; /* Garante que seja coluna */
+    gap: 15px; /* Adiciona espaçamento entre elementos */
+  }
+
+  /* Ajustes no botão de edição */
+  .editBtn button {
+    width: 120px; /* Reduz a largura do botão */
+    height: 35px; /* Reduz a altura do botão */
+  }
+
+  /* Ajustes no sobre */
+  .sobre {
+    width: 100%; /* Remove largura fixa */
+    padding: 20px; /* Reduz o padding */
+  }
+
+  .sobre h2 {
+    font-size: 28px; /* Reduz o tamanho da fonte */
+  }
+
+  .sobre p {
+    font-size: 16px; /* Reduz o tamanho da fonte */
+  }
+
+  /* Ajustes no editableContainer */
+  .editableContainer {
+    width: 100%; /* Remove largura fixa */
+    padding: 10px;
+  }
+
+  .editableTextArea {
+    min-height: 100px; /* Reduz a altura mínima */
+    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+  }
+
+  .editableFooter {
+    margin-right: 0; /* Remove margem fixa */
+    gap: 10px; /* Adiciona espaçamento */
+  }
+
+  .editableFooter .cancelButton,
+  .editableFooter .saveButton {
+    display: flex;
+      padding: 8px; /* Ajusta o padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px; /* Reduz ainda mais o padding */
+  }
+
+  .content {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .contentInfo {
+    gap: 10px;
+  }
+
+  .fotoDeFundo{
+    max-width: 350px;
+  }
+
+  .imagemDeFundo{
+    width: 100%;
+  }
+
+  .fotoPerfil img {
+    width: 80px; /* Reduz ainda mais a foto de perfil */
+    height: 80px;
+  }
+
+  .infos h1 {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  .infos strong {
+    font-size: 18px;
+  }
+
+  .infos p {
+    font-size: 14px;
+  }
+
+  .sobre h2 {
+    font-size: 24px;
+  }
+
+  .sobre p {
+    font-size: 14px;
+  }
+}

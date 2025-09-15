@@ -1,0 +1,263 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/Fundo verde.jpg');
+  background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat;  
+  padding: 60px 5%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1400px;
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+
+  h1 {
+    text-align: center;
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: bold;
+    font-size: 54px;
+    margin-top: 15px;
+    color: white;
+  }
+
+  p {
+    text-align: justify;
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  height: 400px;
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.5s, transform 0.3s;
+
+  &:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+  }
+
+  .photoContainer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--background);
+  }
+
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .name {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 5px;
+    color: var(--color-black);
+  }
+
+  .position {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--color-high);
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    a {
+      color: var(--font-claras);
+      font-size: 1.5rem;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    padding: 50px 4%;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .title {
+    h1 {
+      font-size: 48px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .card {
+    width: 250px;
+    height: 360px;
+
+    .photoContainer {
+      height: 180px;
+    }
+
+    .name {
+      font-size: 1.1rem;
+    }
+
+    .position {
+      font-size: 0.9rem;
+    }
+
+    .socials {
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 3%;
+  }
+
+  .title {
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    min-height: 350px;
+
+    .photoContainer {
+      height: 160px;
+    }
+
+    .name {
+      font-size: 1rem;
+    }
+
+    .position {
+      font-size: 0.85rem;
+    }
+
+    .socials {
+      gap: 0.8rem;
+
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 2%;
+  }
+
+  .content {
+    padding: 0 10px;
+  }
+
+  .title {
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 10px;
+
+    .photoContainer {
+      height: 140px;
+    }
+
+    .name {
+      font-size: 0.9rem;
+    }
+
+    .position {
+      font-size: 0.8rem;
+    }
+
+    .socials {
+      gap: 0.6rem;
+
+      a {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

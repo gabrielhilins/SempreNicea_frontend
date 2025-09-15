@@ -1,0 +1,159 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.content {
+  width: 90%;
+  max-width: 600px;
+  max-height: 100vh;
+  background-color: var(--color-light);
+  border-radius: 8px;
+  overflow-y:visible;
+  padding: 20px;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.backIcon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-black);
+  font-size: 24px;
+}
+
+.backIcon:focus {
+  outline: none;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px; /* Aumentado para melhor espaçamento */
+  color:  var(--color-black);
+  font-size: 15px;
+  font-weight: bold;
+
+  select {
+    width: 100%;
+    padding: 8px 5px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-black);
+    border-radius: 5px; 
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: var(--color-white);
+    color: var(--color-black);
+
+    &:focus {
+      border-color: var(--color-action);
+    }
+  }
+}
+
+.formInput {
+    width: 100%;
+    padding: 8px 35px 8px 35px; /* Espaço para o ícone */
+    box-sizing: border-box;
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: var(--color-white);
+
+  &:focus {
+    border-color: var(--color-action);
+  }
+}
+
+.inputDescription {
+  width: 100%;
+  padding: 8px 5px;
+  box-sizing: border-box;
+  border: 1px solid ;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  min-height: 100px;
+  background-color: var(--color-white);
+  resize: vertical;
+  color: var(--color-black);
+
+  &:focus {
+    border-color: var(--color-action);
+  }
+}
+
+.dateSelectWrapper {
+  display: flex;
+  gap: 0.5rem;
+
+  select {
+    flex: 1;
+  }
+}
+
+.errorMessage {
+  color: #d9534f;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submitButton {
+  padding: 10px 40px;
+  background-color: var(--color-buttons);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-action);
+    color: #fff;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}

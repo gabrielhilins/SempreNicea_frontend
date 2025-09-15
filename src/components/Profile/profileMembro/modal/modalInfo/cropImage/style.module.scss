@@ -1,0 +1,265 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; // gap-2 ~ 8px
+  }
+  
+  .removeButton {
+    color: #ef4444; // text-red-500
+    text-decoration: underline;
+    font-size: 0.875rem; // text-sm
+  
+    &:hover {
+      color: #b91c1c; // hover:text-red-700
+    }
+  }
+  
+  .previewCrop {
+    margin-top: 1rem; // mt-4
+  }
+  
+  .imgCropped {
+    width: 8rem;  // w-32
+    height: 8rem; // h-32
+    object-fit: cover;
+  
+    &.profile {
+      border-radius: 9999px; // rounded-full
+    }
+  
+    &.background {
+      border-radius: 0.25rem; // rounded
+    }
+  }
+  
+  .wrapperCrop {
+    position: relative;
+    width: 18rem; // w-72
+    height: 18rem; // h-72
+    background-color: black;
+  }
+  
+  .sliderCrop {
+    width: 18rem; // w-72
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.5rem; // gap-2
+    margin-top: 0.5rem; // mt-2
+  }
+  
+  .saveButton {
+    background-color: #1d361f; // bg-blue-600
+    color: white;
+    padding: 0.5rem 1rem; // px-4 py-2
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  
+    :hover {
+      background-color: #9ca3af;
+      color: #1d361f;
+    }
+  }
+  
+  .cancelButton {
+    background-color: #b91c1c; // bg-gray-300
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  
+    :hover {
+      background-color: #9ca3af;
+      color: #b91c1c; 
+    }
+  }
+
+  @media (max-width: 768px) {
+  /* Ajustes no container do modal */
+  .container {
+    padding: 10px; /* Reduz o padding para economizar espaço */
+  }
+
+  /* Ajustes no conteúdo do modal */
+  .content {
+    width: 95%; /* Aumenta a largura relativa para melhor uso do espaço */
+    max-width: 400px; /* Reduz o max-width */
+    padding: 15px; /* Reduz o padding */
+    max-height: 90vh; /* Garante que o modal não ultrapasse a tela */
+  }
+
+  /* Ajustes no header do modal */
+  .header h2 {
+    font-size: 20px; /* Reduz o tamanho da fonte */
+  }
+
+  .backIcon {
+    font-size: 20px; /* Reduz o tamanho do ícone */
+  }
+
+  /* Ajustes no wrapper de crop */
+  .wrapperCrop {
+    width: 14rem; /* Reduz a largura do contêiner de crop */
+    height: 14rem; /* Reduz a altura */
+  }
+
+  .sliderCrop {
+    width: 14rem; /* Ajusta o slider para corresponder ao wrapper */
+  }
+
+  /* Ajustes na imagem cortada */
+  .imgCropped {
+    width: 6rem; /* Reduz o tamanho da imagem cortada */
+    height: 6rem;
+  }
+
+  /* Ajustes no preview */
+  .previewCrop {
+    margin-top: 0.5rem; /* Reduz o espaçamento */
+  }
+
+  /* Ajustes nos botões de ação */
+  .actions {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .saveButton,
+  .cancelButton {
+    width: 100%; /* Botões ocupam toda a largura */
+    padding: 0.5rem; /* Ajusta o padding */
+    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+  }
+
+  /* Ajustes no upload de fotos */
+  .photoUpload {
+    flex-direction: column; /* Muda para coluna */
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .uploadButton {
+    width: 100%; /* Botão de upload ocupa toda a largura */
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  /* Ajustes nos wrappers de imagem */
+  .profileImageWrapper,
+  .backgroundImageWrapper {
+    width: 80px; /* Reduz o tamanho */
+    height: 80px;
+  }
+
+  .backgroundImageWrapper {
+    width: 120px; /* Ajusta a proporção para imagem de fundo */
+    height: 80px;
+  }
+
+  .hoverOverlay {
+    font-size: 10px; /* Reduz o tamanho da fonte */
+    padding: 3px;
+  }
+
+  /* Ajustes nos formulários */
+  .forms {
+    gap: 10px; /* Reduz o espaçamento */
+  }
+
+  .formLabel {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+  }
+
+  .formInput {
+    font-size: 13px; /* Reduz o tamanho da fonte */
+    padding: 8px 30px; /* Ajusta o padding para ícones */
+  }
+
+  .editIcon,
+  .iconInput {
+    font-size: 16px; /* Reduz o tamanho dos ícones */
+  }
+
+  /* Ajustes nos botões de ação do formulário */
+  .actionButtons {
+    flex-direction: column; /* Muda para coluna */
+    gap: 15px; /* Reduz o gap */
+  }
+
+  .saveButton,
+  .revertButton {
+    width: 100%; /* Botões ocupam toda a largura */
+    padding: 8px;
+    font-size: 16px; /* Reduz o tamanho da fonte */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes adicionais para telas muito pequenas */
+  .content {
+    width: 98%; /* Usa quase toda a largura da tela */
+    max-width: 300px; /* Reduz ainda mais o max-width */
+    padding: 10px;
+  }
+
+  .header h2 {
+    font-size: 18px; /* Reduz ainda mais a fonte */
+  }
+
+  .backIcon {
+    font-size: 18px;
+  }
+
+  .wrapperCrop {
+    width: 10rem; /* Reduz ainda mais o contêiner de crop */
+    height: 10rem;
+  }
+
+  .sliderCrop {
+    width: 10rem; /* Ajusta o slider */
+  }
+
+  .imgCropped {
+    width: 4rem; /* Reduz ainda mais a imagem cortada */
+    height: 4rem;
+  }
+
+  .profileImageWrapper,
+  .backgroundImageWrapper {
+    width: 60px; /* Reduz o tamanho */
+    height: 60px;
+  }
+
+  .backgroundImageWrapper {
+    width: 100px;
+    height: 60px;
+  }
+
+  .hoverOverlay {
+    font-size: 9px; /* Reduz ainda mais a fonte */
+    padding: 2px;
+  }
+
+  .formLabel {
+    font-size: 13px;
+  }
+
+  .formInput {
+    font-size: 12px;
+    padding: 6px 25px;
+  }
+
+  .editIcon,
+  .iconInput {
+    font-size: 14px;
+  }
+
+  .uploadButton {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+  

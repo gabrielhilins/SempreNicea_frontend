@@ -1,0 +1,178 @@
+$primary-color: #013A33;
+$hover-color: #4DAA8A;
+$text-color: #374151;
+$gray-300: #d1d5db;
+$green-600: #16a34a;
+$white: #ffffff;
+$text-link: #5BAA66;
+
+.acessoContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $white;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.brandSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  background-color: #013A33;
+  
+  .switchRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (max-width: 767px) {
+    padding: clamp(0.5rem, 2vw, 1rem);
+  }
+}
+
+.formSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  background-color: var(--color-white);
+
+  @media (max-width: 767px) {
+    padding: clamp(0.5rem, 2vw, 1rem);
+  }
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: bold;
+  color: var(--green-light);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+}
+
+.googleButton,
+.emailButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  padding: 0.8rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.googleButton {
+  border: 1px solid $text-color;
+  color: $text-color;
+  background: $white;
+
+  &:hover {
+    background: $gray-300;
+  }
+
+  img {
+    margin-right: 0.5rem;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.emailButton {
+  background-color: var(--green-light);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  svg {
+    margin-right: 0.5rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+}
+
+.accountText {
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
+  color: var(--color-black);
+  text-align: center;
+  margin-top: 1rem;
+
+  .link {
+    color: $text-link;
+    font-weight: 600;
+    margin-left: 0.25rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .formWrapper {
+    max-width: 100%;
+  }
+
+  .googleButton,
+  .emailButton {
+    max-width: 100%;
+  }
+}
+
+.homeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  color: $primary-color;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  background-color: white;
+  
+  &:hover {
+    background-color: $gray-300;
+    text-decoration: none;
+  }
+  
+  svg {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+}

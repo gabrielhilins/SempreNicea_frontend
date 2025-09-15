@@ -1,0 +1,233 @@
+.botao-post {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+
+  .botao {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    background-color: var(--color-buttons);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon-add {
+      font-size: 30px;
+      color: var(--color-white);
+    }
+  }
+
+  .opcoes-container {
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    background-color: var(--color-light);
+    border-radius: 15px;
+    padding: 15px;
+    transform: scale(0.9);
+    pointer-events: none;  // Desativa interatividade enquanto as opções estão ocultas
+    transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s ease 0.3s;
+
+    &.show {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;  // Ativa interatividade quando visível
+      transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s ease 0s;
+    }
+
+    .opcao {
+      background: none;
+      border: none;
+      color: var(--color-black);
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 10px;
+      white-space: nowrap;
+      display: flex;
+      flex-direction: row;
+      transition: all 0.5s;
+
+      &:hover {
+        transition: all 0.5s;
+        background-color: var(--color-high);
+        color: var(--color-white);
+      }
+    }
+
+    .icon-opcao {
+      margin-right: 8px; /* Espaço entre o ícone e o texto */
+      font-size: 20px;   /* Ajuste o tamanho conforme necessário */
+    }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+    display: none; /* Escondido por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0; /* Inicialmente invisível */
+    pointer-events: none; /* Desativa interatividade */
+    transition: opacity 0.3s ease, pointer-events 0s ease 0.3s; /* Transição suave */
+  }
+  
+  .modal-overlay.show-background {
+    display: flex; /* Torna o modal visível quando a classe for adicionada */
+    opacity: 1; /* Exibe o modal com transição */
+    pointer-events: all; /* Ativa a interatividade */
+    transition: opacity 0.3s ease, pointer-events 0s ease 0s;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 600px;
+    height: 80%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Inicialmente invisível */
+    transform: scale(0.9); /* Inicialmente encolhido */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+  }
+  
+  .modal-overlay.show-background .modal-content {
+    opacity: 1; /* Modal visível */
+    transform: scale(1); /* Modal no tamanho original */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave ao aparecer */
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .close-icon {
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  
+  .modal-body {
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// Media Queries para telas médias e menores
+@media (max-width: 768px) {
+  .botao-post {
+    bottom: 10px;
+    right: 10px;
+
+    .botao {
+      width: 50px;
+      height: 50px;
+
+      .icon-add {
+        font-size: 25px;
+      }
+    }
+
+    .opcoes-container {
+      bottom: 60px;
+      right: 5px;
+      gap: 20px;
+
+      .opcao {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+
+    .modal-overlay {
+      .modal-content {
+        width: 90%;
+        max-width: 500px;
+        height: 70%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .botao-post {
+    bottom: 5px;
+    right: 5px;
+
+    .botao {
+      width: 45px;
+      height: 45px;
+
+      .icon-add {
+        font-size: 20px;
+      }
+    }
+
+    .opcoes-container {
+      bottom: 50px;
+      right: 0;
+      gap: 15px;
+
+      .opcao {
+        font-size: 12px;
+        padding: 6px;
+      }
+    }
+
+    .modal-overlay {
+      .modal-content {
+        width: 85%;
+        max-width: 400px;
+        height: 60%;
+      }
+    }
+  }
+}
+
+.title-modal {
+  font-size: 26px;
+  font-weight: bold;
+}

@@ -1,0 +1,277 @@
+$primary-color: #013A33;
+$gray-300: #d1d5db;
+$red-500: #ef4444;
+$green-600: #16a34a;
+$white: #ffffff;
+$text-color: #374151;
+$text-link: #5BAA66;
+
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+  padding: clamp(0.5rem, 4vw, 1rem);
+  margin: 0 auto;
+}
+
+.membroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+
+  label {
+    color: var(--green-light);
+    font-weight: 600;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .radioGroup {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+      color: var(--green-light);
+
+      input[type="radio"] {
+        width: 1.125rem;
+        height: 1.125rem;
+        margin-right: 0.5rem;
+        accent-color: var(--green-light);
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.membroLabel {
+  color: var(--green-light);
+  font-weight: 600;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  margin-bottom: 0.5rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  color: var(--green-light);
+}
+
+.radioInput {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-right: 0.5rem;
+  accent-color: var(--green-light);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.modalTitle {
+  color: $primary-color;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-bottom: 1rem;
+}
+
+.modalText {
+  color: $text-color;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid $gray-300;
+  padding: 0.5rem 0;
+  transition: border-color 0.3s ease;
+
+  &:focus-within {
+    border-color: var(--green-light);
+  }
+
+  .inputIcon {
+    color: var(--green-light);
+    margin-right: 0.5rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .input {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    color: $text-color;
+    padding: 0.5rem 0;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus + label,
+    &.filled + label {
+      top: -1.25rem;
+      font-size: clamp(0.625rem, 2vw, 0.75rem);
+      color: var(--green-light);
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0.75rem;
+    left: 2rem;
+    color: #9ca3af;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .toggleIcon {
+    color: var(--green-light);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+}
+
+.errorMessage {
+  color: $red-500;
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  margin-top: 0.25rem;
+}
+
+.successMessage {
+  color: $green-600;
+  font-size: clamp(0.625rem, 2vw, 0.75rem);
+  margin-top: 0.25rem;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-light);
+  color: $white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    animation: spin 1s linear infinite;
+    border: 2px solid transparent;
+    border-top: 2px solid $white;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: $white;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 0.5rem;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+
+  h2 {
+    color: $primary-color;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $text-color;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .modalButton {
+    background: $primary-color;
+    color: $white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: $green-600;
+    }
+
+    &:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .inputWrapper label {
+    left: 1.5rem;
+  }
+
+  .radioGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

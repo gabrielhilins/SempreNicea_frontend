@@ -1,0 +1,279 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 40px 40px 40px;
+  background-color: var(--background);
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1250px) {
+    padding: 15px 30px 30px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 15px 20px 20px 20px;
+  }
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 1024px) {
+    height: 100%;
+    padding: 4.5rem 4% 4% 4%;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+    justify-content: center;
+    padding-top: 3.5rem;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 100%;
+    padding: 3rem 3% 2% 3%;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 94vh;
+  border-radius: 30px;
+
+  @media screen and (max-width: 1024px) {
+    height: 94vh;
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 0px 70px;
+  z-index: 2;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0px 20px;
+    width: 100%;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 50px;
+    color: #ffffff;
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: bold;
+
+    @media screen and (max-width: 1250px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 28px;
+      text-align: center;
+      margin: 0.625rem 0 0;
+    }
+  }
+
+  h2 {
+    text-align: left;
+    font-size: 22px;
+    color: #ffffff;
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: 500;
+
+    @media screen and (max-width: 1250px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      margin: 0.9375rem 0 0;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 16px;
+      margin: 0.625rem 0 0;
+    }
+  }
+}
+
+.aboutButton {
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+
+  .navLink {
+    text-decoration: none;
+  }
+
+  .Button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-black);
+    background: var(--color-light);
+    border-radius: 5px;
+    width: 17.5rem;
+    height: 2.8125rem;
+    padding: 0 1rem;
+    border: none;
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    gap: 0.625rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+
+    &:active {
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 1440px) {
+      width: 16.25rem;
+      height: 2.5rem;
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 16.25rem;
+      height: 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 15rem;
+      height: 2.375rem;
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 12.5rem;
+      height: 2.25rem;
+      font-size: 0.75rem;
+      padding: 0 0.75rem;
+    }
+  }
+
+  .icon {
+    font-size: 1.125rem;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.9375rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
+.movingBar {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+
+  // Texto sobre IA
+  h2 {
+    font-size: 1rem;
+    color: #c0c0c0;
+    padding: 0 80px;
+    font-family: 'Libre Caslon Text', serif;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    bottom: 110%;
+    right: -2%;
+    z-index: 3;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1rem;
+      padding: 0 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.9rem;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 0.75rem;
+      padding: 0 15px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    bottom: 5vh;
+    gap: 1.2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    bottom: 4vh;
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    bottom: 3vh;
+    gap: 0.8rem;
+  }
+}

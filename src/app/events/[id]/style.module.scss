@@ -1,0 +1,23 @@
+.container{
+    background-color: var(--background);
+    padding: 100px 150px 30px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @media screen and (max-width: 1440px) {
+        padding: 100px 80px 30px 80px;
+    }
+    @media screen and (max-width: 1250px) {
+        padding: 100px 55px 30px 55px;
+    }
+    @media screen and (max-width: 1024px) {
+        padding: 100px 50px 30px 50px;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 100px 40px 15px 40px;
+    }
+    @media screen and (max-width: 480px) {
+        padding: 100px 20px 15px 20px;
+    }
+}

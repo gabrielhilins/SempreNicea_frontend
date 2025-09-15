@@ -1,0 +1,395 @@
+.heroNews {
+  display: flex;
+  gap: 20px;
+  padding: 100px 100px 40px 100px;
+  height: 60vh;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--background);
+  max-width: 1920px;
+
+  @media screen and (max-width: 1440px) { 
+    padding: 100px 60px 30px 60px;
+  } 
+  @media screen and (max-width: 1250px) { 
+    padding: 100px 30px 20px 30px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 100px 30px 20px 30px;
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 100px 20px 15px 20px;
+    gap: 15px;
+  }
+
+  .mainNews {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: baseline;
+    flex: 2;
+    position: relative;
+    background-image: url(/reuniaoSempreNiceia2.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px var(--box-shadow);
+    transition: 0.5s;
+
+    &:hover {
+      box-shadow: none;
+      transition: 0.5s;
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 300px;
+      flex: none;
+    }
+
+    @media screen and (max-width: 480px) {
+      height: 250px;
+      border-radius: 8px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(1px);
+      z-index: 1;
+    }
+
+    .newsInfo {
+      position: absolute;
+      padding: 40px;
+      flex-direction: column;
+      z-index: 2;
+      box-shadow: 10px 10px 10px var(--box-shadow);
+      transition: 0.5s;
+
+      @media screen and (max-width: 1024px) {
+        padding: 30px;
+      }
+
+      @media screen and (max-width: 768px) {
+        padding: 25px;
+      }
+
+      @media screen and (max-width: 480px) {
+        padding: 20px;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 16px;
+        color: rgb(221, 221, 221);
+
+        @media screen and (max-width: 1250px) {
+          font-size: 14px;
+        }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 12px;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 10px;
+        }
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
+
+        @media screen and (max-width: 1250px) {
+          font-size: 28px;
+        }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 26px;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 24px;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .sideNews {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: row;
+      gap: 20px;
+      flex: none;
+    }
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .smallNewsHigh {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: end;
+      flex: 1;
+      position: relative;
+      background-image: url(/reuniaoSempreNiceia.avif);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px var(--box-shadow);
+      transition: 0.5s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(1px);
+        z-index: 1;
+      }
+
+      &:hover {
+        box-shadow: none;
+        transition: 0.5s;
+      }
+
+      @media screen and (max-width: 768px) {
+        height: 200px;
+      }
+
+      @media screen and (max-width: 480px) {
+        height: 180px;
+        border-radius: 8px;
+      }
+    }
+
+    .smallNewsLow {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: end;
+      flex: 1;
+      position: relative;
+      background-image: url(/reuniaoConcilio.png);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px var(--box-shadow);
+      transition: 0.5s;
+
+      &:hover {
+        box-shadow: none;
+        transition: 0.5s;
+      }
+
+      @media screen and (max-width: 768px) {
+        height: 200px;
+      }
+
+      @media screen and (max-width: 480px) {
+        height: 180px;
+        border-radius: 8px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(1px);
+        z-index: 1;
+      }
+    }
+
+    .smallNewsInfo {
+      position: absolute;
+      padding: 20px;
+      flex-direction: column;
+      z-index: 2;
+
+      @media screen and (max-width: 1024px) {
+        padding: 18px;
+      }
+
+      @media screen and (max-width: 768px) {
+        padding: 15px;
+      }
+
+      @media screen and (max-width: 480px) {
+        padding: 12px;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 0.9rem;
+        color: rgb(221, 221, 221);
+
+        @media screen and (max-width: 1024px) {
+          font-size: 0.85rem;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 0.8rem;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 0.75rem;
+        }
+      }
+
+      h1 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 0.95rem;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Estilos para versão mobile com slider
+.heroNewsMobile {
+  padding: 100px 10px 30px 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.eventCarousel {
+  box-shadow: 10px 10px 10px var(--box-shadow);
+  transition: 0.5s;
+  border-radius: 8px;
+
+  &:hover {
+    box-shadow: none;
+    transition: 0.5s;
+  }
+}
+
+.slideItem {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+}
+
+.slideNewsInfo {
+  position: relative;
+  padding: 25px;
+  z-index: 2;
+  
+  h1 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 0.75rem;
+    color: rgb(221, 221, 221);
+    margin: 0;
+  }
+}
+
+.customPrevButton,
+.customNextButton {
+  position: absolute;
+  top: 26%;
+  transform: translateY(-50%);
+  background: rgba(73, 73, 73, 0.5);
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(31, 31, 31, 0.8);
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+.customPrevButton {
+  left: 20px;
+}
+
+.customNextButton {
+  right: 20px;
+}
+
+// Garantir que o layout seja aplicado corretamente
+@media screen and (min-width: 481px) {
+  .heroNewsMobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroNews {
+    display: none;
+  }
+}

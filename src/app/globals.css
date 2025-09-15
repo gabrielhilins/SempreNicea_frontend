@@ -1,0 +1,53 @@
+/* Aqui fica todas as estlizacoes globais, que vao servir pra todas as paginas*/
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Rowdies:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Libre Caslon Text", serif !important;
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+}
+
+:root {
+  --color-white: #fcfcfc;
+  --color-light: #f1f1f1;
+  --color-card-about: #f1f1f1;
+  --color-high: #303030;
+  --color-black: #171717;
+  --gray-couse: #f0f0f0;
+  --gray-dark: #0e0e0e;
+  --green-dark: #013A33;
+  --green-light: #013A33;
+  --color-buttons: #013A33;
+  --color-yellow: #DDAD53;
+  --yellow-dark: #bd9346;
+  --background: #dfdfdf;
+  --font-claras: #555;
+  --box-shadow: rgba(0, 0, 0, 0.158);
+  --color-action: #1d361f;
+}
+
+[data-theme='dark'] {
+  --color-white: #171717;
+  --color-light: #303030;
+  --color-high: #f1f1f1;
+  --color-black: #f0f0f0;
+  --gray-couse: #0e0e0e;
+  --gray-dark: #f0f0f0;
+  --green-dark: #2c3130;
+  --green-light: #16a34a;
+  --color-buttons: #f1f1f1;
+  /* --color-yellow: #bd9346;
+  --yellow-dark: #DDAD53; */
+  --background: #121212;
+  --font-claras: #bbb;
+  --box-shadow: rgba(0, 0, 0, 0.5);
+  --color-action: #668068;
+}

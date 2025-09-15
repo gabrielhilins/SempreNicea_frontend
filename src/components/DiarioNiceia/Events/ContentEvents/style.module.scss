@@ -1,0 +1,137 @@
+.eventsListSection {
+  padding: 40px 100px;
+  padding-bottom: 150px;
+  background-color: var(--background);
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1440px) {
+    padding: 40px 50px;
+    padding-bottom: 140px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 40px 20px;
+    padding-bottom: 120px;
+  } 
+
+  @media screen and (max-width: 480px) {
+    padding: 16px;
+    padding-bottom: 80px;
+  }
+}
+
+.eventsList {
+  background-color: var(--color-light);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px var(--box-shadow);
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: none;
+    transition: 0.5s;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 18px;
+    border-radius: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 12px;
+    border-radius: 4px;
+  }
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+
+  @media screen and (max-width: 768px) {
+    height: 120px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 100px;
+  }
+}
+
+.eventsListFooter {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 1rem; 
+  margin-top: 1rem; 
+  padding: 1rem 0;
+
+  @media screen and (max-width: 768px) {
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem 0;
+  }
+
+  @media screen and (max-width: 480px) {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    flex-direction: column;
+  }
+
+  a {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+  
+    &:hover {
+      color: var(--font-claras); 
+      transition: 0.5s;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1.3rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  svg {
+    font-size: 1.25rem; 
+    color: var(--color-black);
+    transition: 0.5s;
+
+    &:hover {
+      color: var(--font-claras); 
+      transition: 0.5s;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
+}

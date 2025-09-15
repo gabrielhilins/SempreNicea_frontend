@@ -1,0 +1,322 @@
+.container {
+  width: 100%;
+  z-index: 4;
+  position: fixed;
+  max-width: 1920px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  background-color: var(--green-dark);
+  color: #ffffff;
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px;
+  margin-left: 30px;
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    margin-left: 5px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-left: 0px; 
+    padding: 10px 0px;
+  }
+
+  @media screen and (max-width: 900px) {
+    margin-left: 5px;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin-left: 0px;
+  }
+
+  h1 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #ffffff;
+
+    @media screen and (max-width: 1440px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 1024px) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 900px) {
+      font-size: 16px;
+    }
+    @media screen and (max-width: 425px) {
+      display: none;
+    }
+  }
+}
+
+.navbarHamburguer {
+  display: none;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+    z-index: 1;
+    padding: 0;
+    border-radius: 2px;
+
+    &:after,
+    &:before {
+      content: " ";
+      display: block;
+      width: 35px;
+      height: 3px;
+      background: #fff;
+      margin-top: 6px;
+      position: relative;
+      transition: 0.3s;
+      border-radius: 50px;
+    }
+
+    &.active {
+      border: transparent;
+    
+      &:before {
+        transform: rotate(45deg);
+        top: 2px;
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+        top: -6px;
+      }
+    }
+  }
+}
+
+.navLinks {
+  display: flex;
+  gap: 3rem; 
+  list-style: none;
+
+  @media screen and (max-width: 1440px) {
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: 1220px) {
+    gap: 0.5rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    left: 62%;
+    width: 35vw;
+    height: 55vh;
+    border-radius: 10px;
+    background: var(--color-white);
+    gap: 2rem;
+    clip-path: circle(0px at 90% -15%);
+    transition: 1s ease-in-out;
+    pointer-events: none;
+
+    a {
+      font-size: 24px;
+      opacity: 1;
+    }
+
+    &.active {
+      clip-path: circle(1500px at 90% -15%);
+      pointer-events: all;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    height: 60vh;
+  }
+
+  @media screen and (max-width: 380px) {
+    height: 68vh;
+  }
+}
+
+.desktopColor {
+  color: #fff;
+  &::after {
+    background-color: #fff;
+  }
+}
+
+.mobileColor {
+  color: var(--color-black);
+  &::after {
+    background-color: var(--color-black);
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 18px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.activeLink {
+    text-decoration: none;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+    }
+  }
+}
+
+.menuSection {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; 
+
+  @media screen and (max-width: 1440px) {
+    gap: 1.5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    gap: 0.8rem;
+  }
+}
+
+.darkMode {
+  background-color: var(--color-light);
+  transition: 0.10s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 4rem;
+  cursor: pointer;
+  border-radius: 5px;
+
+  @media screen and (max-width: 1220px) {
+    height: 1.8rem;
+    width: 3.8rem;
+  }
+
+  .button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2.5px solid #fff;
+    padding: 0;
+
+    .icon {
+      font-size: 1rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      path {
+        color: var(--color-black);
+      }
+    }
+    
+    .iconActive {
+      background-color: var(--color-light);
+      border-radius: 5px;
+      font-size: 0.5rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      path {
+        font-size: 0.5rem;
+        height: 1px;
+        width: 1px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.signOutIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

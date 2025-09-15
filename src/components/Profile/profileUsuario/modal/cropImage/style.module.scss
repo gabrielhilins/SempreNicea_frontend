@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; // gap-2 ~ 8px
+  }
+  
+  .removeButton {
+    color: #ef4444; // text-red-500
+    text-decoration: underline;
+    font-size: 0.875rem; // text-sm
+  
+    &:hover {
+      color: #b91c1c; // hover:text-red-700
+    }
+  }
+  
+  .previewCrop {
+    margin-top: 1rem; // mt-4
+  }
+  
+  .imgCropped {
+    width: 8rem;  // w-32
+    height: 8rem; // h-32
+    object-fit: cover;
+  
+    &.profile {
+      border-radius: 9999px; // rounded-full
+    }
+  
+    &.background {
+      border-radius: 0.25rem; // rounded
+    }
+  }
+  
+  .wrapperCrop {
+    position: relative;
+    width: 18rem; // w-72
+    height: 18rem; // h-72
+    background-color: black;
+  }
+  
+  .sliderCrop {
+    width: 18rem; // w-72
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.5rem; // gap-2
+    margin-top: 0.5rem; // mt-2
+  }
+  
+  .saveButton {
+    background-color: #1d361f; // bg-blue-600
+    color: white;
+    padding: 0.5rem 1rem; // px-4 py-2
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  
+    :hover {
+      background-color: #9ca3af;
+      color: #1d361f;
+    }
+  }
+  
+  .cancelButton {
+    background-color: #b91c1c; // bg-gray-300
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  
+    :hover {
+      background-color: #9ca3af;
+      color: #b91c1c; 
+    }
+  }
+  

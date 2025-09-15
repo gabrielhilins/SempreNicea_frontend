@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  margin-block: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-black);
+
+    @media screen and (max-width: 1250px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+    @media screen and (max-width: 425px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  hr {
+    width: 200px;
+    height: 3px;
+    background-color: var(--color-black);
+    border-radius: 5px;
+    border: none;
+
+    @media screen and (max-width: 1250px) {
+      width: 150px;
+    } 
+    @media screen and (max-width: 768px) {
+      width: 100px;
+    }
+    @media screen and (max-width: 425px) {
+      width: 80px;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  padding: 30px 100px 60px 100px;
+  margin-bottom: 100px;
+  max-width: 1920px;
+
+  @media screen and (max-width: 1250px) {
+    padding: 50px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 10px;
+  }
+}
+
+.error{
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  background-color: var(--color-light);
+  color: var(--color-black);
+}
+
+/* Estilização dos botões de navegação do Swiper */
+.content :global(.swiper-button-next),
+.content :global(.swiper-button-prev) {
+  color: var(--color-light);
+  background: var(--color-buttons);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.content :global(.swiper-button-next):hover,
+.content :global(.swiper-button-prev):hover {
+  color: white;
+  background: rgba(29, 29, 29, 0.9);
+  transform: scale(1.1);
+}
+
+.content :global(.swiper-button-next)::after,
+.content :global(.swiper-button-prev)::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Responsividade dos botões */
+@media (max-width: 768px) {
+  .content :global(.swiper-button-next),
+  .content :global(.swiper-button-prev) {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .content :global(.swiper-button-next)::after,
+  .content :global(.swiper-button-prev)::after {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content :global(.swiper-button-next),
+  .content :global(.swiper-button-prev) {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .content :global(.swiper-button-next)::after,
+  .content :global(.swiper-button-prev)::after {
+    font-size: 14px;
+  }
+}
+
+/* Estilização da paginação */
+.content :global(.swiper-pagination-bullet) {
+  background: rgba(73, 73, 73, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.content :global(.swiper-pagination-bullet-active) {
+  background: var(--color-buttons);
+  transform: scale(1.2);
+}

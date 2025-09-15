@@ -1,0 +1,315 @@
+/* Container dos formulários */
+.postar-projeto-form, 
+.postar-Noticia-form,
+.postar-eventos-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: visible;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 768px) {
+    padding: 15px;
+    width: 100%;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 10px;
+  }
+}
+
+/* Modal principal - CORRIGIDO */
+.react-responsive-modal-modal {
+  max-width: 600px !important;
+  width: 95% !important; /* Importante: deixar espaço nas laterais */
+  background: var(--color-light) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  margin: 20px auto !important;
+  max-height: 90vh !important; /* CORRIGIDO: limitar altura */
+  overflow: hidden !important;
+
+  path {
+    fill: var(--color-black);
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 10px !important;
+    width: calc(100% - 20px) !important; /* CORRIGIDO: largura responsiva */
+    max-width: none !important;
+    max-height: 85vh !important;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 5px !important;
+    width: calc(100% - 10px) !important;
+    max-height: 90vh !important;
+  }
+}
+
+/* Modal body - NOVO: controlar scroll */
+.modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+
+  @media screen and (max-width: 768px) {
+    max-height: 75vh;
+    padding: 15px;
+  }
+}
+
+.title-modal {
+  color: var(--color-black);
+  margin-bottom: 10px;
+  font-size: 24px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
+}
+
+.character-counter {
+  color: var(--gray-dark);
+  font-size: 14px;
+  display: block;
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.input-container {
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 12px;
+  }
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--gray-dark);
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+}
+
+.input-text,
+.input-textarea,
+.input-file {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: var(--color-light);
+  color: var(--color-black);
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
+  box-sizing: border-box; /* IMPORTANTE */
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px; /* Previne zoom no iOS */
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+
+  &:focus {
+    border-color: var(--color-buttons);
+    outline: none;
+  }
+}
+
+.input-textarea {
+  resize: vertical;
+  height: 150px;
+  min-height: 100px;
+
+  @media screen and (max-width: 768px) {
+    height: 120px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 100px;
+  }
+}
+
+.input-text[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: var(--color-black);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z'/%3E%3C/svg%3E") no-repeat center;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+
+  @media screen and (max-width: 480px) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.submit-button {
+  background-color: var(--color-buttons);
+  font-weight: bold;
+  color: var(--color-white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: var(--color-buttons-hover, #183024);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.input-file {
+  padding: 0;
+  font-size: 14px;
+
+  &::-webkit-file-upload-button {
+    background-color: var(--color-buttons);
+    color: var(--color-white);
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    margin-right: 10px;
+
+    @media screen and (max-width: 480px) {
+      padding: 6px;
+      font-size: 12px;
+    }
+
+    &:hover {
+      background-color: var(--color-buttons-hover, #183024);
+    }
+  }
+}
+
+.file-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (max-width: 480px) {
+    gap: 6px;
+  }
+}
+
+.file-name {
+  font-size: 14px;
+  color: var(--gray-dark);
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  word-break: break-all;
+
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 15px;
+  }
+
+  .label {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 0;
+    color: var(--gray-dark);
+    display: block;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+      padding: 6px 0;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 13px;
+      padding: 4px 0;
+    }
+  }
+}
+
+.select {
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 15px;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 12px;
+  }
+}
+
+/* Scrollbar customizada para o modal */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+
+  &:hover {
+    background: var(--color-buttons);
+  }
+}
